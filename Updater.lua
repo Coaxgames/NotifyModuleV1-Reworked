@@ -45,7 +45,8 @@ if NewCode~=nil then
 			end
 			print("Outdated Version, Please Update with NotifyUpdater...")
 			warn("A new Update is available for NotifyV"..LocalVersion.." --> V"..FindVersion.."\nUse NotifyUpdater if you have it")
-			if UseCustomVersion and script.Parent:FindFirstChild("notify(backup)") then
+			--Deprecated Backup System(Not needed anymore, and theres a better way)
+			--[[if UseCustomVersion and script.Parent:FindFirstChild("notify(backup)") then
 				print("Using Backup notify")
 				--Remove this and use the backup Notify module
 				script.Parent.Name="notnotify" --Rename this script
@@ -64,13 +65,12 @@ if NewCode~=nil then
 				print("Cannot Use Backup notify: Missing -notify(backup)-")
 			else
 				print("Backup Disabled")
-			end
-
+			end]]
 		else
-			print("Updates are turned off, notify is out of date")
+			print("Updates are turned off, notify is out-of-date")
 		end
 	else
-		print("up-To-Date Version, Removing Updater...")
+		print("Updates are turned on, notify is up-To-Date")
 	end
 end
 
