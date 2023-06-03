@@ -2,14 +2,16 @@
 The branch is for Community Driven updates.
 
 To install notifyV1 manually!!
+```
 1: Drop the notify.rbxm file into where ever as usual.
 2: thats it lol, just call it like the instructions say
-
+```
 If you want auto-updates!!!
+```
 1: place the NotifyUpdater.rbmx file into "ServerScriptService"
 2: install the Updater in studio, and you should have automatic updates
+```
 plugin link: -insert here-
-
 
 # Features added changed/added:
 ~Custom colors can be used by sending a table of color values like so:
