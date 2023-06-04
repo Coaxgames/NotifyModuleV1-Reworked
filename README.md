@@ -13,6 +13,12 @@ If you want auto-updates!!!
 ```
 plugin link: -insert here-
 
+# Basic usage coverage, example usages
+
+
+
+
+
 # Features added changed/added:
 ~Custom colors can be used by sending a table of color values like so:
 ```
