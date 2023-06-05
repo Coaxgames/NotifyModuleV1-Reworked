@@ -2,11 +2,11 @@
 
 ## Supported Versions
 ```
-✅= UptoDate, Supported in issues and Commits (FullySupported)
-✔️= Secure & Stable, Supprted in issues and but not Commits (Issues are Supported, commits will be ignored)
-♦️= Unstable Build, Supported in issues and Commits (FullySupported)
-⚠️= Exploit Found, Recommend Updating (Issues Suppored, Also Forces us to update)
-❌= No longer Supported in issues(Outdated Version, No support at all but should function)
+✅= UptoDate (FullySupported)
+✔️= Secure & Stable, (Issues are Supported, commits will be ignored)
+♦️= Unstable Build, (FullySupported)
+⚠️= Exploit Found, Recommend Updating (Issues Supported and Commits Allowed)
+❌= No longer Supported, (Outdated Version, no Support or Commits ignored)
 ```
 | Version     | Supported          |
 | -------     | ------------------ |
@@ -16,8 +16,8 @@
 | Before 1.00 | ❌ |
 
 ## Reporting a Vulnerability
-Post in Issues AND create a request of what you think is vulnerable 
-doing both will have a higher chance of review
+Post in Issues AND create a request with your Error logs
+doing both will have a higher chance of review and a commit being allowed
 
 ## Security Updates
 Security Updates will come out right after an exploit or issue is found
