@@ -1,20 +1,15 @@
 # NotifyModuleV2
 The branch is for Community Driven updates.
 
-To install notifyV1 manually!!
+To install NotifyV1 Community Version:
 ```
-1: Drop the notify.rbxm file into where ever as usual.
-2: thats it lol, just call it like the instructions say
+1: Get the Notify Installer here: "https://www.roblox.com/library/13659358957/" 
+2: install the Updater in studio, and just click install (it will also update)
 ```
-If you want auto-updates!!!
-```
-1: place the NotifyUpdater.rbmx file into "ServerScriptService"
-2: install the Updater in studio, and you should have automatic updates
-```
-plugin link: -insert here-
+
 
 # Basic usage coverage, example usages
-
+Still Writing this section!!
 
 
 
@@ -42,7 +37,7 @@ Changes.MD will contain what i changes i have made in simplyNotifiedV1
 # Why this branch exist?
 ```
 For new users intrested in learning coding,
-while maintaining and continueing a new path for NotifyV1, along with Support in the issue tab.
+while maintaining and forging a new path for NotifyV1, along with Support in the issue tab.
 Examples are provided to help prevent User error.
 ```
 # Where can i Download notify?
