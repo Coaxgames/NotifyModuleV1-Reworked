@@ -1,5 +1,6 @@
 # Security Policy for the Plugin
 ```
+<
 SecureVersions={
   ["Supported"]={
     "V1.03",
@@ -11,6 +12,7 @@ SecureVersions={
     "V1.00",
   }
 }
+>
 ```
 
 ## Supported Versions
