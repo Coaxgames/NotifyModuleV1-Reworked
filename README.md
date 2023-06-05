@@ -1,14 +1,21 @@
 # NotifyModuleV2
 The branch is for Community Driven updates.
 
-To install NotifyV1 Community Version:
+# How to Install
+## To install NotifyV1 Community Version:
 ```
-1: Get the Notify Installer here: "https://www.roblox.com/library/13659358957/" 
+1: Get the Notify Installer here: "https://www.roblox.com/library/13659358957/"
 2: install the Updater in studio, and just click install (it will also update)
+3: thats it, just follow the usage guide for details on how to use
+```
+## To install NotifyV1 Community Version Without Plugin:
+```
+1: Get the Notify Instance here: "https://www.roblox.com/library/13659448082/"
+2: Delete or Move "NotifyUpdater" to "ServerScriptService", the plugin will replace it anyway when installing
+3: thats it, just follow the usage guide for details on how to use
 ```
 
-
-# Basic usage coverage, example usages
+# Basic usage Guide
 Still Writing this section!!
 
 
