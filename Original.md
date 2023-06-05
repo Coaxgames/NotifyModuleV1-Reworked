@@ -1,4 +1,4 @@
-Original code for SimplyNotifiedV1
+Original code for SimplyNotifiedV1 (@Starnamics), @Starnamics also has 2 new versions out~(1 if im wrong)
 ```
 local module = {}
 
