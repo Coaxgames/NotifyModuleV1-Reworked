@@ -1,13 +1,13 @@
 # Security Policy for the Plugin
 ```
 <
-  ["Supported"]={
+  Supported{
     "V1.03",
   }/
-  ["Safe"]={
+  Safe{
     "V1.01", "V1.02"
   }/
-  ["unSafe"]={
+  unSafe{
     "V1.00",
   }
 >
