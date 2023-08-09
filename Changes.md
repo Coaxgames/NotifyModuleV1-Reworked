@@ -2,7 +2,7 @@
 local module = {}
 local TweenService = game.Workspace:WaitForChild("Services"):FindFirstChild("notify"):FindFirstChild("TweenService"):FindFirstChild("Event") -- Replace "notify" with the location of the module
 local NVersion=script:WaitForChild("Version")
-NVersion.Value="V1.03"
+NVersion.Value="V1.04"
 print("Started notify Module")
 function insertContainer(p)
 	if p == nil then
@@ -87,10 +87,12 @@ function module.notify(target,title,text,color,dur)
 						selectedColor = colors.default
 					end
 				else--if String but not table or know preset then default to NIL color
+					warn("Color Select Was Missing, Defaulted to NIL color!")
 					selectedColor = colors.NILColor
 				end	
 			elseif type(color)=="table" then--If new format then
 				if color.R==nil or color.G==nil or color.B==nil then--The New DefaultColor System
+					warn("Color Table Was Missing, Defaulted to NIL color!")
 					selectedColor = colors.NILColor
 				else
 					selectedColor = Color3.fromRGB(math.clamp(color.R*255,0,255), math.clamp(color.G*255,0,255), math.clamp(color.B*255,0,255))
@@ -108,8 +110,18 @@ function module.notify(target,title,text,color,dur)
 				for _,v in pairs(player.PlayerGui.simpleSuite.Notifications:GetChildren()) do
 					notification_number = notification_number +1
 				end
-
-
+				
+				
+				--READ ME | DEV NOTE
+				--Change this to a server Asset, Rather than creating it here.
+				--[[Solution:
+					Simply clone a GUI(the stuff below) asset with a animation script(The TweenScript)
+					Use instance varibles to set Tween time and text...
+					
+					if the stuff above is added we no longer need to wait for these notifacations to finish
+				
+				]]
+				
 				local Notification1 = Instance.new("Frame")
 				Notification1.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 				Notification1.BorderSizePixel = 0
