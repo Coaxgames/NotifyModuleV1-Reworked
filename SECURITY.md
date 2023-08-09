@@ -3,17 +3,17 @@
 ## Supported Versions
 ```
 ✅= UptoDate (FullySupported)
-✔️= Secure & Stable, (Issues are Supported, commits will be ignored)
-🔺 = Unstable Build, (FullySupported)
+✔️= Secure & Stable, (FeedbackSupport, Support and Commits are suggestions/Bug Catching)
+🔺 = Unstable Build, (Issues are Supported, commits will be ignored)
 ⚠️= Exploit Found, Recommend Updating (Issues Supported and Commits Allowed)
-❌= No longer Supported, (Outdated Version, no Support or Commits ignored)
+❌= No longer Supported, (Outdated Version, no Support and Commits ignored)
 ```
 | Version     | Supported          |
 | -------     | ------------------ |
 | V1.04 | 🔺 |
 | V1.03 | ✅ |
 | V1.01-V1.02 | ✔️ |
-| V1.00       | 🔺 |
+| V1.00       | ❌ |
 | Before 1.00 | ❌ |
 
 ##When an update Applies what version am i put onto?
