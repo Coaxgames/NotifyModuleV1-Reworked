@@ -4,19 +4,21 @@
 ```
 ✅= UptoDate (FullySupported)
 ✔️= Secure & Stable, (FeedbackSupport, Support and Commits are suggestions/Bug Catching)
-🔺 = Unstable Build, (Issues are Supported, commits will be ignored)
 ⚠️= Exploit Found, Recommend Updating (Issues Supported and Commits Allowed)
+🔺 = Unstable Build, (Issues are Supported, commits will be considered)
+🔻 = Outdated Build, (Issues Not Supported, commits will be ignored)
 ❌= No longer Supported, (Outdated Version, no Support and Commits ignored)
 ```
-| Version     | Supported          |
-| -------     | ------------------ |
-| V1.04 | 🔺 |
-| V1.03 | ✅ |
-| V1.01-V1.02 | ✔️ |
-| V1.00       | ❌ |
-| Before 1.00 | ❌ |
+| Version     | Support ~ Status     | Reason/Status                   |
+| -------     | ------------------ |---------------------------------|
+| V1.05 | ✅~✔️ | Currently In Testing, Slightly unpolished and missing Settings Menu |
+| V1.04 | 🔺~🔻| Some bugs with color are overlooked, Themes/Color may be broken rather than NILColor |  
+| V1.03 | ❌~🔻 | No longer have access to this source code, Considered outdated |
+| V1.01-V1.02 | ❌~✅ | Reliable Versions, dont delete your cached backup! |
+| V1.00       | ❌~🔺⚠️ | My inital update, Buggy and broken due to the switchover into OOP's |
+| Before 1.00 | ❌~🔻⚠️ | Original/Unknown Version of NotifyV1 |
 
-##When an update Applies what version am i put onto?
+## When an update Applies what version am i put onto?
 When updating Notify, it will target the Newest version, if you report an issue we 
 will revert to the old one and retest the broken version
 
