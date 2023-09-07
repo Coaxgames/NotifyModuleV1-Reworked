@@ -1,13 +1,12 @@
-```
 script.Event.Event:Connect(function(NotifyFrame, StartSize, StartDur, EndSize, EndDur, DebugTime)
-	print("StartingTween at "..DebugTime)
-	NotifyFrame:TweenSize(UDim2.new(1, 0, 0.1, 0))
+	--print("StartingTween at "..DebugTime)
+	--print(StartSize)
+	NotifyFrame:TweenSize(StartSize)
 	wait(StartDur)
 
-	NotifyFrame:TweenSize(UDim2.new(0, 0, 0, 0))
+	NotifyFrame:TweenSize(EndSize)
 	wait(EndDur)
 
 	NotifyFrame:Destroy()
-	print("FinishedTween at "..os.clock())
+	--print("FinishedTween at "..os.clock())
 end)
-```
