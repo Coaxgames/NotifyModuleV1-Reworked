@@ -17,6 +17,7 @@ The branch is for Community Driven updates.
 
 # Basic usage Guide
 Still Writing this section!!
+Can be found in instructions.md for now!
 
 
 
@@ -24,9 +25,14 @@ Still Writing this section!!
 # Features added changed/added:
 ~Custom colors can be used by sending a table of color values like so:
 ```
-  local notify = require(game.Workspace:WaitForChild("Services"):FindFirstChild("notify")) -- Replace "notify" with the location of the module
-  --local color = {["R"]=255, ["G"]=0, ["B"]=0,}
-  notify.notify(Player,"TitleCard", "Message", color, DLY)
+local notify = require(notify) -- Replace "notify" with the location of the module
+local color = {
+  ["BackdropColor"]={["R"]=255, ["G"]=255, ["B"]=255,},
+  ["IconboxColor"]={["R"]=255, ["G"]=255, ["B"]=255,},
+  ["MSGBoxColor"]={["R"]=255, ["G"]=255, ["B"]=255,},
+  ["TitleBoxColor"]={["R"]=255, ["G"]=255, ["B"]=255,},
+}
+notify.notify(Player,title,text,color,dur)
 ```
 
 along with that the Tween service was rewritten, so now upon providing ANY delay Notify will use a seperate script to Tween
@@ -36,7 +42,8 @@ The reason for the tween rewrite was during a Playeradded function would take ag
 This workaround allows anyone that uses this verison of notify to call 6 notifactions side-by-side and still run the scripts like datastore loading, or Charachter loading
 
 Original.MD will contain the original Code from simplyNotifiedV1 (Made by @Starnamics)
-Changes.MD will contain what i changes i have made in simplyNotifiedV1
+Updates/News.MD will contain what i changes i have made in simplyNotifiedV1
+Changes.MD will contain the code i and the community have been modifing 
 
 
 # Q&A Section below
@@ -54,8 +61,8 @@ in the "CommuintyRelease" branch contains all you need to get started, including
 ```
 # Copyright concerns?
 ```
-1: These Assets provides no majour value over notifyV2 or V3, its simply being kept up-to-date. with active support and community Collabs
-2: Any material made by myself does NOT reflect @Starnamics Ability to program or Maintain NotifyV1
+1: These Assets provides no majour value over notifyV2 or V3, its simply being kept up-to-date. with active support and community support
+2: Any material made by myself does NOT reflect @Starnamics Ability to program or Maintain projects
 3: These scripts/assets are subject to change are open source to others
 ```
 # Can i help build NotifyV1? or Create new assets?
@@ -66,7 +73,7 @@ in the "CommuintyRelease" branch contains all you need to get started, including
 # what about exploits or backdooring?
 ```
 1: All Changes are reviewed by myself and others
-2: All Changes are tested in a "Clean-Room" to prevent backdooring on any main game
-3: if any detections are in place for studio we will not accept that change
+2: All Changes are tested in a "Clean-Room" to prevent backdooring/Abuse on any game
+3: Any version to be affect must be be made into its own branch, then we can revert to the previous version. You just have to click update on the plugin to fix your issue
 ```
 
