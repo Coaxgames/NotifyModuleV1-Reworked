@@ -1,48 +1,21 @@
 ```
 local module = {}
 local TweenService = game.Workspace:WaitForChild("Services"):FindFirstChild("notify"):FindFirstChild("TweenService"):FindFirstChild("Event") -- Replace "notify" with the location of the module
+local GUIBuilder = require(script:WaitForChild("GUIBuilder"))
 local NVersion=script:WaitForChild("Version")
-NVersion.Value="V1.04"
+NVersion.Value="V1.05"
 print("Started notify Module")
 function insertContainer(p)
 	if p == nil then
-		local simpleSuite = Instance.new("ScreenGui")
-		simpleSuite.Name = "simpleSuite"
-		simpleSuite.DisplayOrder = 25
-		simpleSuite.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-		simpleSuite.Parent = game:GetService("StarterGui")
-
-		local Notifications = Instance.new("Frame")
-		Notifications.BackgroundTransparency = 1
-		Notifications.Name = "Notifications"
-		Notifications.Position = UDim2.new(0.815, 0, 0.08, 0)
-		Notifications.Size = UDim2.new(0.175, 0, 0.9, 0)
-		Notifications.Parent = simpleSuite
-
-		local UIListLayout = Instance.new("UIListLayout")
-		UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-		UIListLayout.Padding = UDim.new(0.025, 0)
-		UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Bottom
-		UIListLayout.Parent = Notifications
+		--Rewrite
+		if game:GetService("StarterGui"):WaitForChild("NotifyModuleContainer")==nil then
+			GUIBuilder.CreateBin(game:GetService("StarterGui"))
+		end
 	else
-		local simpleSuite = Instance.new("ScreenGui")
-		simpleSuite.Name = "simpleSuite"
-		simpleSuite.DisplayOrder = 25
-		simpleSuite.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-		simpleSuite.Parent = p:WaitForChild("PlayerGui")
-
-		local Notifications = Instance.new("Frame")
-		Notifications.BackgroundTransparency = 1
-		Notifications.Name = "Notifications"
-		Notifications.Position = UDim2.new(0.815, 0, 0.08, 0)
-		Notifications.Size = UDim2.new(0.175, 0, 0.9, 0)
-		Notifications.Parent = simpleSuite
-
-		local UIListLayout = Instance.new("UIListLayout")
-		UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-		UIListLayout.Padding = UDim.new(0.025, 0)
-		UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Bottom
-		UIListLayout.Parent = Notifications
+		--Rewrite
+		if p:WaitForChild("PlayerGui"):WaitForChild("NotifyModuleContainer")==nil then
+			GUIBuilder.CreateBin(p:FindFirstChild("PlayerGui"))
+		end
 	end
 end
 
@@ -50,17 +23,61 @@ insertContainer()
 
 --Preset colors
 local colors = {
-	NILColor = Color3.fromRGB(79, 79, 79),
-	alert = Color3.fromRGB(255, 105, 105),
-	success = Color3.fromRGB(105, 255, 105),
-	warning = Color3.fromRGB(255, 255, 105),
-	info = Color3.fromRGB(105, 105, 255),
-	default = Color3.fromRGB(255, 255, 255)	
+	NILColor  = {
+		["BackdropColor"]=Color3.fromRGB(40, 40, 40),
+		["IconboxColor"]=Color3.fromRGB(54, 54, 54),
+		["MSGBoxColor"]=Color3.fromRGB(54, 54, 54),
+		["TitleBoxColor"]=Color3.fromRGB(40, 40, 40),
+	},
+	alert  = {
+		["BackdropColor"]=Color3.fromRGB(254, 104, 104),
+		["IconboxColor"]=Color3.fromRGB(54, 54, 54),
+		["MSGBoxColor"]=Color3.fromRGB(54, 54, 54),
+		["TitleBoxColor"]=Color3.fromRGB(254, 104, 104),
+	},
+	success = {
+		["BackdropColor"]=Color3.fromRGB(104, 254, 104),
+		["IconboxColor"]=Color3.fromRGB(54, 54, 54),
+		["MSGBoxColor"]=Color3.fromRGB(54, 54, 54),
+		["TitleBoxColor"]=Color3.fromRGB(104, 254, 104),
+	},
+	warning  = {
+		["BackdropColor"]=Color3.fromRGB(254, 254, 104),
+		["IconboxColor"]=Color3.fromRGB(54, 54, 54),
+		["MSGBoxColor"]=Color3.fromRGB(54, 54, 54),
+		["TitleBoxColor"]=Color3.fromRGB(254, 254, 104),
+	},
+	info = {
+		["BackdropColor"]=Color3.fromRGB(104, 104, 254),
+		["IconboxColor"]=Color3.fromRGB(54, 54, 54),
+		["MSGBoxColor"]=Color3.fromRGB(54, 54, 54),
+		["TitleBoxColor"]=Color3.fromRGB(104, 104, 254),
+	},
+	default = {
+		["BackdropColor"]=Color3.fromRGB(254, 254, 254),
+		["IconboxColor"]=Color3.fromRGB(54, 54, 54),
+		["MSGBoxColor"]=Color3.fromRGB(54, 54, 54),
+		["TitleBoxColor"]=Color3.fromRGB(254, 254, 254),
+	},
 }
 
+--Color functions
+function SetColorCus(color)
+	local selectedColor
+	selectedColor = {
+		["BackdropColor"]=Color3.fromRGB(math.clamp(color.BackdropColor.R*255,0,255), math.clamp(color.BackdropColor.G*255,0,255), math.clamp(color.BackdropColor.B*255,0,255)),
+		["IconboxColor"]=Color3.fromRGB(math.clamp(color.IconboxColor.R*255,0,255), math.clamp(color.IconboxColor.G*255,0,255), math.clamp(color.IconboxColor.B*255,0,255)),
+		["MSGBoxColor"]=Color3.fromRGB(math.clamp(color.MSGBoxColor.R*255,0,255), math.clamp(color.MSGBoxColor.G*255,0,255), math.clamp(color.MSGBoxColor.B*255,0,255)),
+		["TitleBoxColor"]=Color3.fromRGB(math.clamp(color.TitleBoxColor.R*255,0,255), math.clamp(color.TitleBoxColor.G*255,0,255), math.clamp(color.TitleBoxColor.B*255,0,255)),
+	}
+	return selectedColor
+end
+function SetColorDef()
+	return colors.NILColor
+end
 function module.notify(target,title,text,color,dur)
 
-	if target:WaitForChild("PlayerGui"):FindFirstChild("simpleSuite") ~= nil then
+	if target:WaitForChild("PlayerGui"):FindFirstChild("NotifyModuleContainer") ~= nil then
 
 		local duration
 
@@ -73,7 +90,7 @@ function module.notify(target,title,text,color,dur)
 		--Rescripted by botwot7024 (Below this line)
 		if title ~= nil and text ~= nil and color ~= nil then
 			local selectedColor = colors.default
-			if type(color)=="string" then--Only here for backwards compatibility(old format)
+			if type(color)=="string" then--Only here for backwards compatibility(Updated to new color system)
 				if string.lower(color) == "alert" or string.lower(color) == "success" or string.lower(color) == "warning" or string.lower(color) == "info" or string.lower(color) == "default" then
 					if string.lower(color) == "alert" then
 						selectedColor = colors.alert
@@ -91,14 +108,35 @@ function module.notify(target,title,text,color,dur)
 					selectedColor = colors.NILColor
 				end	
 			elseif type(color)=="table" then--If new format then
+				local Fail=false
 				if color.R==nil or color.G==nil or color.B==nil then--The New DefaultColor System
-					warn("Color Table Was Missing, Defaulted to NIL color!")
-					selectedColor = colors.NILColor
+					Fail=true
+				elseif color.BackdropColor==nil or color.IconboxColor==nil or color.MSGBoxColor==nil or color.TitleBoxColor==nil then
+					Fail=true
 				else
-					selectedColor = Color3.fromRGB(math.clamp(color.R*255,0,255), math.clamp(color.G*255,0,255), math.clamp(color.B*255,0,255))
+					if color.BackdropColor.R==nil or color.BackdropColor.G==nil or color.BackdropColor.B==nil then
+						Fail=true
+					elseif color.IconboxColor.R==nil or color.IconboxColor.G==nil or color.IconboxColor.B==nil then
+						Fail=true
+					elseif color.MSGBoxColor.R==nil or color.MSGBoxColor.G==nil or color.MSGBoxColor.B==nil then
+						Fail=true
+					elseif color.TitleBoxColor.R==nil or color.TitleBoxColor.G==nil or color.TitleBoxColor.B==nil then
+						Fail=true
+					else
+					 
+						--Disable this and add in as a setting, This being on here means if the color is missing "G" but isint nil
+						--then it will result in Off-looking Color schemes(Generally looks broken/Fucked up)
+						--selectedColor = SetColorCus(color)
+					end
 				end
+				if Fail then
+					selectedColor = SetColorDef()
+				else --Needed
+					--Enabled here due to Else condition usage
+					selectedColor = SetColorCus(color)
+				end			
 			else--if no color defined at all default to "Default"
-				selectedColor = colors.default
+				selectedColor = SetColorDef()
 			end
 			--Rescripted by botwot7024 (Above this line)
 			local notification_number = 1
@@ -107,81 +145,80 @@ function module.notify(target,title,text,color,dur)
 			if game.Players:FindFirstChild(target.Name) then
 				local player = game.Players:FindFirstChild(target.Name)
 
-				for _,v in pairs(player.PlayerGui.simpleSuite.Notifications:GetChildren()) do
-					notification_number = notification_number +1
+				for _,v in pairs(player.PlayerGui.NotifyModuleContainer.OnScreenCache.Notifications:GetChildren()) do
+					local S1=string.split(v.Name,"Notification")
+					--print(S1)
+					if S1[2]==nil then
+						S1[2]=0
+					end
+					notification_number = tonumber(S1[2])+((notification_number+1)/100)
 				end
 				
 				
 				--READ ME | DEV NOTE
 				--Change this to a server Asset, Rather than creating it here.
-				--[[Solution:
-					Simply clone a GUI(the stuff below) asset with a animation script(The TweenScript)
-					Use instance varibles to set Tween time and text...
-					
-					if the stuff above is added we no longer need to wait for these notifacations to finish
+				--[[
 				
+					New Color format: (Still thinking on this)
+					Color={
+						["BackdropColor"]={
+							["R"]=255, --Clamped To 0-255
+							["G"]=0, --Clamped To 0-255
+							["B"]=0, --Clamped To 0-255	
+						},
+						["IconboxColor"]={
+							["R"]=255, --Clamped To 0-255
+							["G"]=0, --Clamped To 0-255
+							["B"]=0, --Clamped To 0-255	
+						},
+						["MSGBoxColor"]={
+							["R"]=255, --Clamped To 0-255
+							["G"]=0, --Clamped To 0-255
+							["B"]=0, --Clamped To 0-255	
+						},
+						["TitleBoxColor"]={
+							["R"]=255, --Clamped To 0-255
+							["G"]=0, --Clamped To 0-255
+							["B"]=0, --Clamped To 0-255	
+						},
+					}
 				]]
+				--Rewrite
+				local NewNotification= player.PlayerGui:WaitForChild("NotifyModuleContainer").Assets.Notify1:Clone()
+				NewNotification.Parent=player.PlayerGui.NotifyModuleContainer.OnScreenCache.Notifications
+				NewNotification.Name="Notification"..notification_number
+				NewNotification.BackgroundColor3 = selectedColor.BackdropColor
+				NewNotification.Visible=true
 				
-				local Notification1 = Instance.new("Frame")
-				Notification1.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-				Notification1.BorderSizePixel = 0
-				Notification1.Name = "Notification"..notification_number
-				Notification1.Size = UDim2.new(0, 0, 0, 0)
-				Notification1.Parent = player.PlayerGui:WaitForChild("simpleSuite").Notifications
-
-				local Color = Instance.new("Frame")
-				Color.BackgroundColor3 = selectedColor
-				Color.BorderSizePixel = 0
-				Color.Name = "Color"
-				Color.Size = UDim2.new(0.025, 0, 1, 0)
-				Color.Parent = Notification1
-
-				local Content = Instance.new("Frame")
-				Content.BackgroundTransparency = 1
-				Content.Name = "Content"
-				Content.Position = UDim2.new(0.025, 0, 0, 0)
-				Content.Size = UDim2.new(0.975, 0, 1, 0)
-				Content.Parent = Notification1
-
-				local Title = Instance.new("TextLabel")
-				Title.BackgroundTransparency = 1
-				Title.Font = Enum.Font.SourceSansSemibold
-				Title.Name = "Title"
-				Title.Size = UDim2.new(1, 0, 0.4, 0)
-				Title.Text = title
-				Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-				Title.TextScaled = true
-				Title.TextSize = 14
-				Title.TextWrapped = true
-				Title.Parent = Content
-
-				local Text = Instance.new("TextLabel")
-				Text.BackgroundTransparency = 1
-				Text.Font = Enum.Font.SourceSans
-				Text.Name = "Text"
-				Text.Position = UDim2.new(0, 0, 0.2999997, 0)
-				Text.Size = UDim2.new(1, 0, 0.7, 0)
-				Text.Text = text
-				Text.TextColor3 = Color3.fromRGB(255, 255, 255)
-				Text.TextScaled = true
-				Text.TextSize = 14
-				Text.TextWrapped = true
-				Text.Parent = Content
+				NewNotification.Title.Text=title
+				NewNotification.Title.BackgroundColor3 = selectedColor.TitleBoxColor
+				NewNotification.Title.TextScaled=true
+				NewNotification.Title.TextWrapped=true
+				
+				NewNotification.MSG.Text=text
+				NewNotification.MSG.BackgroundColor3 = selectedColor.MSGBoxColor
+				NewNotification.MSG.TextScaled=true
+				NewNotification.MSG.TextWrapped=true
+				
+				
+				NewNotification.ICON.Image="rbxasset://textures/ui/GuiImagePlaceholder.png"--[[icon]]
+				NewNotification.ICON.BackgroundColor3 = selectedColor.IconboxColor
+			
 
 				--Rescripted by botwot7024
 				if script:FindFirstChild("TweenService") then
 					local Time=os.clock()
-					print("Tweening 1 at "..Time)
-					TweenService:Fire(Notification1, UDim2.new(1, 0, 0.1, 0), duration, UDim2.new(0, 0, 0, 0), 1.1, Time)
-					print("Tweening 2 at "..os.clock())
+					--print("Tweening 1 at "..Time)
+					TweenService:Fire(NewNotification, UDim2.new(0.95, 0, -0.014, 80), duration, UDim2.new(0.95, 0, 0, 0), 1.1, Time)
+					--print("Tweening 2 at "..os.clock())
 				else
-					Notification1:TweenSize(UDim2.new(1, 0, 0.1, 0))
+					NewNotification:TweenSize(UDim2.new(0.95, 0, -0.014, 80))
 					wait(duration)
 					
-					Notification1:TweenSize(UDim2.new(0, 0, 0, 0))
+					NewNotification:TweenSize(UDim2.new(0, 0, 0, 0))
 					wait(1.1)
 					
-					Notification1:Destroy()
+					NewNotification:Destroy()
 				end
 				--Rescripted by botwot7024
 			end
