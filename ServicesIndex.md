@@ -5,10 +5,10 @@
     "Example1", "BundledServiceExample", "NotifyServiceV1.06",
   }/
   Safe{
-    "Example", "NotifyServiceV1.05",
+    "NotifyServiceV1.05",
   }/
   unSafe{
-    "ExampleUnSafe",
+    
   }
 >
 ```
