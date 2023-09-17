@@ -2,7 +2,7 @@
 ```
 <
   Supported{
-    "Example1",
+    "Example1", "BundledServiceExample",
   }/
   Safe{
     "Example",
