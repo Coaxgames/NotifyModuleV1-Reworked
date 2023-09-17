@@ -2,13 +2,13 @@
 ```
 <
   Supported{
-    "V1.06",
+    "Example1",
   }/
   Safe{
-    "V1.04","V1.05",
+    "Example",
   }/
   unSafe{
-    "V1.00",
+    "ExampleUnSafe",
   }
 >
 ```
