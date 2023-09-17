@@ -1,5 +1,28 @@
 ---------------------
 # Recent events
+Revamped Plugin to work as a "Service/Package manager"
+You can now select services for your game, And Develop packages for others
+
+Will be moving soon so expect a short delay in development!
+
+# New Added Content
+### :sleepy: Eh Content
+```
+ ~No longer supporting ONLY notify
+ ~Package manager allows you to upload or Manage Services from 3rd party sources
+ ~Will also backup the project folder when removing Creator Space
+```
+### :tada: WAOW Content
+```
+ ~Now working on more Packages for game related stuff(They wull be uploaded to the repo)
+ ~Should be error free(Logs arnt finished yet)
+ ~Full Project managment, including Bundling projects into JSON
+ ~Setting Coming soon! (This will allow Custom repo's to be used)
+ ~Full Usage guide coming soon!
+```
+###### Posted 2023-09-16
+------------------------------------------
+# Recent events
 I am now supporting and working on NotifyV1.
 Now that i can work on the Source i have been moving to OOP's and breaking larger scripts to smaller chunks
 
