@@ -2,19 +2,21 @@
 ```
 <
   SafeNotifySeriesV2{
-    "NotifyServiceV1.05", "NotifyServiceV1.06",
+    "NotifyServiceV1.04", "NotifyServiceV1.06",
   }/
   GeneralServies{
     "Example", "BundledServiceExample", "SSMenuGuiV1",
   }/
   OutdatedServices{
-    "NotifyServiceV1.04",
+    "NotifyServiceV1.03",
+  }/
+  MissingServices{
+    "NotifyServiceV1.05",
   }/
   unSafe{
       "NotifyServiceV1.00",
       "NotifyServiceV1.01",
       "NotifyServiceV1.02",
-      "NotifyServiceV1.03",
   }
 >
 ```
