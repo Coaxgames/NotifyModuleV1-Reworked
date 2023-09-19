@@ -1,14 +1,20 @@
 # Security Policy for the Plugin
 ```
 <
-  Supported{
-    "Example", "BundledServiceExample", "NotifyServiceV1.06", "SSMenuGuiV1",
+  SafeNotifySeriesV2{
+    "NotifyServiceV1.05", "NotifyServiceV1.06",
   }/
-  Safe{
-    "NotifyServiceV1.05",
+  GeneralServies{
+    "Example", "BundledServiceExample", "SSMenuGuiV1",
+  }/
+  OutdatedServices{
+    "NotifyServiceV1.04",
   }/
   unSafe{
-    
+      "NotifyServiceV1.00",
+      "NotifyServiceV1.01",
+      "NotifyServiceV1.02",
+      "NotifyServiceV1.03",
   }
 >
 ```
