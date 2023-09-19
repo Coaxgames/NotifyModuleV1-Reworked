@@ -2,7 +2,7 @@
 ```
 <
   Supported{
-    "Example", "BundledServiceExample", "NotifyServiceV1.06",
+    "Example", "BundledServiceExample", "NotifyServiceV1.06", "SSMenuGuiV1",
   }/
   Safe{
     "NotifyServiceV1.05",
