@@ -5,7 +5,7 @@
     "NotifyServiceV1.04", "NotifyServiceV1.06",
   }/
   GeneralServies{
-    "Example", "BundledServiceExample", "SSMenuGuiV1",
+    "Example", "BundledServiceExample", "SSMenuGuiV1", "ButtonService"
   }/
   OutdatedServices{
     "NotifyServiceV1.03",
@@ -20,6 +20,8 @@
   }
 >
 ```
+## New Updates/Services Added on 2023-12-08
+Adding and updating Packages to include user guides, making it 10x easier to use these service packages
 
 ## Supported Versions
 Can be found in CommunityRelease Branch
