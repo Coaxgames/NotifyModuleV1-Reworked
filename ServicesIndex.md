@@ -4,11 +4,17 @@
   SafeNotifySeriesV2{
     "NotifyServiceV1.04", "NotifyServiceV1.06",
   }/
+  Menus{
+    "SSMenuGuiV1", "SSMenuGuiV1.01",
+  }/
+  Guis{
+    "Example",
+  }/
   GeneralServies{
-    "Example", "BundledServiceExample", "SSMenuGuiV1", "ButtonService"
+    "Example", "BundledServiceExample", "SSMenuGuiV1", "ButtonService",
   }/
   OutdatedServices{
-    "NotifyServiceV1.03",
+    "NotifyServiceV1.03", "SSMenuGuiV1"
   }/
   MissingServices{
     "NotifyServiceV1.05",
